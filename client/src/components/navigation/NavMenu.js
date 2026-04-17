@@ -209,6 +209,21 @@ const NavMenu = ({
           </MenuItem>
           <MenuItem
             as={Link}
+            to="/activity"
+            onClick={() => {
+              onClose();
+            }}
+          >
+            Activity
+            <img
+              src={newsIcon}
+              alt="Activity"
+              width="25"
+              style={{ width: '25px' }}
+            />
+          </MenuItem>
+          <MenuItem
+            as={Link}
             to="/news"
             onClick={() => {
               onClose();

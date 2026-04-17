@@ -5,6 +5,7 @@ import NotFoundPage from '../../pages/NotFoundPage';
 import ConnectWallet from '../../pages/ConnectWallet';
 import Login from '../../pages/Login';
 import Register from '../../pages/Register';
+import Activity from '../../pages/Activity';
 
 /**
  * Application Routes Component
@@ -17,6 +18,7 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/play" element={<Play />} />
+      <Route path="/activity" element={<Activity />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

@@ -49,3 +49,11 @@ Before you begin, ensure you have the following installed:
 5. **Access the application**
    - Frontend: http://localhost:3000
    - Backend API: http://localhost:7777
+
+## Ledger pagination behavior (mock mode)
+
+- The `GET /api/v1/ledger` endpoint uses cursor-based pagination with `cursor` and `limit`.
+- Ordering is `created DESC`, and `nextCursor` is the last `id` from the current page.
+- Guarantee: each response is internally consistent for the filtered snapshot computed during that request.
+- Limitation with concurrent mock-data changes: across multiple requests, entries can shift between pages (possible duplicates or skips) because the in-memory dataset may change between calls.
+- Client behavior: filter changes reset `cursor` to avoid mixing pages from different query states.
